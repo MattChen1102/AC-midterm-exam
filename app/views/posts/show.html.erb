@@ -2,6 +2,6 @@
 
 <%= @post.content %>
 
-<%= link_to 'edit' , edit_post_path(@post) %>
-<%= button_to 'delete' , post_path(@post) , :method => :delete %>
-<%= link_to 'Home' , posts_path %>
+<%= link_to '編輯內文' , edit_post_path(@post) %>
+<%= button_to '刪除文章' , post_path(@post) , :method => :delete %>
+<%= link_to '返回首頁' , posts_path %>

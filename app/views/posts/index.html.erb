@@ -1,9 +1,10 @@
-<h2>Hello , This is my FUCKing Forum</h2>
+<h2>Hello , Welcome to The Gun Forum</h2>
 
 <% @posts.each do |p| %>
 	<%= link_to p.title , p%>
-	<br>
 	<%= time_ago_in_words(p.created_at) %>
+	<br>
+	<br>
 	<br>
 <%end%>	
 
