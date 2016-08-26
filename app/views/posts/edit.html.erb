@@ -1,0 +1,8 @@
+<h2>Edit Post</h2>
+
+<%= simple_form_for @post, :url => post_path(@post), :method => :patch do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= f.submit "修改" %>
+<% end %>
+
+<%= link_to 'Cancel' , post_path%>
