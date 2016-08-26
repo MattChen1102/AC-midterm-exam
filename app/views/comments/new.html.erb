@@ -1,0 +1,6 @@
+<h1>Add Comment</h1>
+
+<%= simple_form_for @comments, :url => post_comments_path(@post.id) do |f| %>
+    <%= render :partial => 'commentform', :locals => { :f => f } %>
+    <%= f.submit "張貼" %>
+<% end %>
