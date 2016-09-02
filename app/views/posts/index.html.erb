@@ -1,4 +1,4 @@
-<h2>鍵盤神手災情支援網您好</h2>
+<h2 align="center">㊣鍵盤災情支援網，您好㊣</h2>
 
 <table class="table table-bordered">
 
@@ -22,5 +22,5 @@
 	    <%end%>
     </tbody>
 </table>
-
-<%= link_to '鍵盤神手新增災情求助訊息請點這裡' ,new_post_path %>
+<%= paginate @posts %>
+<%= link_to '新增災情支援訊息' ,new_post_path %>

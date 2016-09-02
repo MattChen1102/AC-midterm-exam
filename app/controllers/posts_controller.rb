@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
 	def index
-		@posts = Post.all.order("created_at DESC")
+		@posts = Post.all.order("created_at DESC").page(1).per(10)
 	end
 
 	def show
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
 		if @post.save
 			 redirect_to post_path(@post)
+			 flash[:notice] = "救災文張新增成功"
 		else
 			render new_post_path(@post)
 		end
@@ -32,6 +33,7 @@ class PostsController < ApplicationController
 	def update
 		if @post.update(post_params)
 			redirect_to posts_path
+			flash[:notice] = "文章修改成功"
 		else
 			render edit_post_path(@post)
 		end
@@ -40,6 +42,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		redirect_to posts_path
+		flash[:notice] = "文章刪除成功"
 	end
 end
 
